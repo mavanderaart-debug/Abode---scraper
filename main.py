@@ -31,19 +31,16 @@ from db import save_jobs
 # ── Configure which scrapers to run ──────────────────────────────────────────
 # Comment out any scraper you want to temporarily disable
 SCRAPERS = [
-    # ✅ TIER 1: Most reliable (API-based, start here)
+    # ✅ TIER 1: API-based, zero IP risk — start with these only
     ("Greenhouse ATS",  "scraper_greenhouse",  True),
     ("Lever ATS",       "scraper_lever",       True),
     ("Ashby ATS",       "scraper_ashby",       True),
 
-    # ✅ TIER 2: Good reliability (HTML scraping, Dutch job boards)
-    ("Nationale Vacaturebank", "scraper_nvb",          True),
-    ("Werkzoeken",             "scraper_werkzoeken",   True),
-    ("Intermediair",           "scraper_intermediair", True),
-
-    # ⚠️ TIER 3: Harder to scrape (may need maintenance)
-    ("Indeed",          "scraper_indeed",      False),  # Set to True to enable
-    # LinkedIn is not included — blocks scrapers aggressively
+    # Disabled for now — enable later
+    ("Nationale Vacaturebank", "scraper_nvb",          False),
+    ("Werkzoeken",             "scraper_werkzoeken",   False),
+    ("Intermediair",           "scraper_intermediair", False),
+    ("Indeed",                 "scraper_indeed",       False),
 ]
 
 
